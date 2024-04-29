@@ -3,11 +3,13 @@
 1. Clone repo
 2. Run `docker-compose up` command in project directory
 
+# About 
+
+i have created a web page parser with auth via jwt token. in this project i used some new for me modules like google-auth-library, google-spreadsheet and cheerio. it was interesting to work with googleAPI it's new for me same with cheerio. it's hard to explain how it's work because there nothing special. after login user get token that allow him use any endpoint and every time he makes a call to endpoint middleware check it's headers and check token for validity. if it has expired, it needs to be updated. also via token app understands who makes request to parser and store this data in db. parser works with cheerio lib. it use selector to get specific data and with fs and csv-writer we can write this files to disk. also this parsed page can be save to cloud google sheet via google-auth-library and google-spreadsheet. we use json auth file that googleAPI allow to download. also it includes simple error middleware that handle errors. app conteinerized so it's should be easy to start i guess.
 
 # API docs
 
 1. post /register 
-Register user. 
 
 {
     "userName": "str",
