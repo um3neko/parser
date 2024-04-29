@@ -6,9 +6,16 @@ import { Credentials } from '../dto/ParseDTO';
 
 
 export class ParserService {
+    
+
 
     static async asJSON(data: any[]): Promise<void> {
         try {
+            
+            const directoryJSON = './src/data/json/';
+            if (!fs.existsSync(directoryJSON)) {
+                fs.mkdirSync(directoryJSON, { recursive: true });
+            }
             const jsonString = JSON.stringify(data);
             fs.writeFileSync(`./src/data/json/${Date.now().toString()}.json`, jsonString);
         } catch (error) {
@@ -22,6 +29,10 @@ export class ParserService {
                 header: Object.keys(data[0]).map(key => ({ id: key, title: key }))
             });
             const csvString = csvStringifier.getHeaderString() + csvStringifier.stringifyRecords(data);
+            const directoryCSV = './src/data/csv/';
+            if (!fs.existsSync(directoryCSV)) {
+                fs.mkdirSync(directoryCSV, { recursive: true });
+            }
             fs.writeFileSync(`./src/data/csv/${Date.now().toString()}.csv`, csvString);
         } catch (error) {
             console.log(error);

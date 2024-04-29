@@ -16,7 +16,7 @@ interface Interaction24Data {
 export class Interaction24ParserService {
     private static readonly URL = "https://interaction24.ixda.org/";
     
-    static async parseIntercation24(creds?: Credentials): Promise<any> {
+    static async parseIntercation24(creds: Credentials): Promise<any> {
         try {
             const scrapedData = await Interaction24ParserService.scrapeData();
             await ParserService.asJSON(scrapedData);

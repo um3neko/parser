@@ -12,7 +12,7 @@ export const Routes = [{
     controller: AuthController,
     action: "login",
 }, {
-    method: "get",
+    method: "post",
     route: "/parse",
     controller: ParseController,
     action: "parse",
