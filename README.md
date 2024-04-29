@@ -1,7 +1,18 @@
 # Steps to run this project:
 
 1. Clone repo
+2. Create .env file
 2. Run `docker-compose up` command in project directory
+
+# .env example 
+HOST=127.0.0.1
+USER=postgres
+PASSWORD=postgres
+DATABASE=postgres
+DB_PORT=5433
+JWT_ACCESS=ba70974041a7db0f73c066d1f746abae5f2505564503503e45465aa645a29403
+REFRESH_JWT=051878230fd7116c7ed56a5134ca35946396fb0f3e7ddbee3319cb46498fbd6a
+SCOPE=https://www.googleapis.com/auth/spreadsheets
 
 # About 
 
